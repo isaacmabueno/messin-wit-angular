@@ -11,18 +11,22 @@
   <!-- <script src="scripts/test.js" type="text/javascript"></script> -->
 <h1>To-Do's For the Wedding</h1>
 <div ng-controller="mainCtrl" class="list">
-  <input ng-model="todo.completed" type="checkbox" />
-  <label ng-hide="editing" class='editing-label' ng-click="test()">{{todo.name}}
-  </label>
+  <div ng-repeat="todo in todos">
 
-  <input ng-show="editing" ng-model='todo.name' class="editing-label" type="text"/>
-  <div class="actions">
-    <a href="" ng-click= "editing =!editing">edit</a>
-    <a href="" ng-click="test()">save</a>
-    <a href="" class="delete">delete</a>
+    <input ng-model="todo.completed" type="checkbox" />
+    <label ng-hide="editing" class='editing-label' ng-click="test()">{{todo.name}}
+    </label>
+
+    <input ng-show="editing" ng-model='todo.name' class="editing-label" type="text"/>
+    <div class="actions">
+      <a href="" ng-click= "editing =!editing">edit</a>
+      <a href="" ng-click="test()">save</a>
+      <a href="" class="delete">delete</a>
+    </div>
   </div>
-</div>
+  {{todos}}
 
+</div>
 
 </body>
 </html>

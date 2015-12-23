@@ -3,6 +3,11 @@ angular.module('todoListApp', [])
   $scope.test = function() {
     console.log('Test 1,2,3 on the mainCtrl');
   };
+  $scope.todos = [
+  {"name": "mail thank you's"},
+  {"name": "cut out center pieces"},
+  {"name": "pay for the rest of the flowers"}
+]
 })
 
 .controller('coolCtrl', function ($scope) {
@@ -12,5 +17,6 @@ angular.module('todoListApp', [])
 
   $scope.test = function() {
     console.log("this is not the main- instead this is the sub");
-  }
+  };
+
 });
