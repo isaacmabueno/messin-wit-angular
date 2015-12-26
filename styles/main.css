@@ -69,8 +69,8 @@ a:hover {
 
 /*input[type="checkbox"] {
   display:none;
-}
-input[type="checkbox"] + span {
+}*/
+/*input[type="checkbox"] + span {
     display:inline-block;
     width:19px;
     height:19px;
