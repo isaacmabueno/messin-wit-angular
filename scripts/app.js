@@ -1,7 +1,7 @@
 angular.module('todoListApp', [])
 .controller('mainCtrl', function($scope) {
-  $scope.test = function() {
-    console.log('Test 1,2,3 on the mainCtrl');
+  $scope.changeNg = function() {
+    console.log('something changed here in real time- test');
   };
   $scope.todos = [
   {"name": "mail thank you's"},
