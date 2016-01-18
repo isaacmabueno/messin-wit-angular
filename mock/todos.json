@@ -1,0 +1,5 @@
+   $scope.todos = [
+   {"name": "mail thank you's"},
+   {"name": "cut out center pieces"},
+   {"name": "pay for the rest of the flowers"}
+ ]
