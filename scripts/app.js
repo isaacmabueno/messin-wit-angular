@@ -1,47 +1,16 @@
-angular.module('todoListApp', [])
-.controller('mainCtrl', function($scope, dataService) {
-  $scope.helloConsole = dataService.helloConsole;
+// wrap this in a closure
+(function(){
+var app = angular.module('store', []);
 
-  $scope.changeNg = function() {
-    console.log('something changed here in real time- test');
-  };
-  $scope.todos = dataService.getTodos();
-//   $scope.todos = [
-//   {"name": "mail thank you's"},
-//   {"name": "cut out center pieces"},
-//   {"name": "pay for the rest of the flowers"}
-// ]
+app.controller('StoreController', function(){
+  this.drink = beer;
 });
 
+var beer = {
+name: 'India Pale Ale',
+size: 'Pint',
+price: 6 + ' bucks',
+description: 'For all the bandwagon hop heads and fickle, uninformed craft beer dabblers... this beer is not about following the crowd or joining the masses of taste bud destroying, one and done beers…this is a different type of IPA; the unassuming, yet assertive type; the type that need not outdo another because this beer simply is what it is – upfront hoppy, floral character complimenting a grainy, classic English malt profile'
+}
 
-
-.service('dataService', function($http) {
-  this.helloConsole = function() {
-    console.log('this is the hello console service!');
-  };
-  this.getTodos = $http.get('mock/todos.json').then(function(response){
-    console.log(resonse.data);
-    return response.data;
-  });
-  $scope.deleteTodo = function(dataService) {
-    dataService.deleteTodo(todo);
-  }
-
-  this.deleteTodo = function(todo) {
-    console.log("The " + todo.name + " todo has been deleted!")
-  };
-  this.saveTodo = function(todo) {
-    console.log("The" + todo.name + " has been saved")
-  };
-});
-
-// .controller('coolCtrl', function ($scope) {
-//   $scope.editS = function() {
-//     console.log("You are clicking the edit button");
-//   };
-
-  // $scope.test = function() {
-  //   console.log("this is not the main- instead this is the sub");
-  // };
-
-// });
+})();
