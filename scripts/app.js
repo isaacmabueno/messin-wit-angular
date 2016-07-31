@@ -1,8 +1,8 @@
 // wrap this in a closure
 (function(){
-var app = angular.module('store', []);
+var app = angular.module('ptfa', []);
 
-app.controller('StoreController', function(){
+app.controller('PresentTenseController', function(){
   this.drink = beer;
 });
 

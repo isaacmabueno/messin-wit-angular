@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='store'>
+<html lang="en" ng-app='ptfa'>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +13,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src='scripts/app.js'></script>
-    <div ng-controller="StoreController as store">
-      <h1>Beer: {{store.drink.name}}</h1>
-      <h1>Size: {{store.drink.size}}</h1>
-      <h2>Price: ${{store.drink.price}}</h2>
+    <div ng-controller="PresentTenseController as ptfa">
+      <h1>Beer: {{ptfa.drink.name}}</h1>
+      <h1>Size: {{ptfa.drink.size}}</h1>
+      <h2>Price: ${{ptfa.drink.price}}</h2>
       <p>
-        <strong>Description</strong>: {{store.drink.description}}
+        <strong>Description</strong>: {{ptfa.drink.description}}
       </p>
     </div>
 
