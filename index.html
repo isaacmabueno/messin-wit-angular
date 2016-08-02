@@ -4,23 +4,57 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Angular App</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+  <!-- <body ng-controller="PresentTenseController as ptfa"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src='scripts/app.js'></script>
 
+  <div ng-controller="PresentTenseController as ptfa">
+    <div ng-repeat="drink in ptfa.drinks | orderBy: 'name'">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script type="text/javascript" src='scripts/app.js'></script>
-    <div ng-controller="PresentTenseController as ptfa">
-      <h1>Beer: {{ptfa.drink.name}}</h1>
-      <h1>Size: {{ptfa.drink.size}}</h1>
-      <h2>Price: ${{ptfa.drink.price}}</h2>
-      <p>
-        <strong>Description</strong>: {{ptfa.drink.description}}
-      </p>
+      <h1>{{drink.name}}</h1>
+      <img class='shrink' ng-src="{{drink.image}}" />
+      <h3>ABV: {{drink.abv}}%</h3>
+      <h3>FG: {{drink.fg}}</h3>
+      <h3>IBU: {{drink.ibu}}</h3>
+
+      <div class="wrap-med">
+      <p>{{drink.description}}</p>
+      <hr>
+      </div>
+        <!-- this button will only show if the value of the expression is true -->
+      <button ng-show="ptfa.drinks.canPurchase">Add to Cart</button>
     </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div ng-controller="PresentTenseSeasonal as ptfas">
+      <div class="adjust-text" ng-repeat="drink in ptfas.drinks | orderBy: 'name'">
+        <h1>{{drink.name}}</h1>
+        <h3>ABV: {{drink.abv}}</h3>
+        <h3>FG: {{drink.fg}}</h3>
+        <h3>IBU: {{drink.ibu}}</h3>
+        <p class="shrink">{{drink.description}}</p>
+
+      </div>
+    </div>
+
+<br>
+<hr>
+<br>
+
+  <div ng-controller="PresentTenseComingSoon as ptfacs">
+    <div ng-repeat="drink in ptfacs.drinks">
+      <h1>{{drink.name}}</h1>
+    </div>
+  </div>
 
   </body>
 </html>
