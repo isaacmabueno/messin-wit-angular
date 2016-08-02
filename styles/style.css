@@ -5,6 +5,7 @@ body {
   background: #edeff0;
   font-size: 16px;
   }
+
 .adjust-text {
   text-align: left;
 }
@@ -15,4 +16,25 @@ body {
 }
 .shrink{
   width: 25%;
+}
+.box {
+  border: 1px solid black;
+  margin-bottom: 2%;
+}
+.desc {
+  list-style: none;
+  display: inline;
+}
+a {
+  text-decoration: none;
+}
+.center-buttons {
+  margin-left: -2%;
+}
+.desc :hover {
+  color: black;
+  font-weight: bold;
+}
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }

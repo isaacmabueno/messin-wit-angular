@@ -15,15 +15,29 @@
 
   <div ng-controller="PresentTenseController as ptfa">
     <div ng-repeat="drink in ptfa.drinks | orderBy: 'name'">
-
-      <h1>{{drink.name}}</h1>
+      <div class="box">
+        <h2>{{drink.name}}</h2>
+      </div>
       <img class='shrink' ng-src="{{drink.image}}" />
-      <h3>ABV: {{drink.abv}}%</h3>
-      <h3>FG: {{drink.fg}}</h3>
-      <h3>IBU: {{drink.ibu}}</h3>
+      <section ng-controller="SectionController as section">
+      <ul class='center-buttons'>
+        <li class="desc" ng-class="{ active: panel.isSelected(1) }">
+          <a href ng-click = "section.selectTab(1)">Profile | </a>
+        </li>
+        <li class="desc" ng-class="{ active: panel.isSelected(2) }">
+          <a href ng-click = "section.selectTab(2)">Description</a>
+        </li>
+      </ul>
+      <div class="wrap-med" ng-show="section.isSelected(1)">
+        <h5>ABV: {{drink.abv}}</h5>
+        <h5>FG: {{drink.fg}}</h5>
+        <h5>IBU: {{drink.ibu}}</h5>
+      </div>
 
-      <div class="wrap-med">
-      <p>{{drink.description}}</p>
+      <div class="wrap-med" ng-show= "section.isSelected(2)">
+        <p> {{drink.description}}</p>
+      </div>
+      </section>
       <hr>
       </div>
         <!-- this button will only show if the value of the expression is true -->
@@ -41,9 +55,9 @@
 
         <h2>{{drink.name}}</h2>
         <img class='shrink' ng-src="{{drink.image}}" />
-        <h3>ABV: {{drink.abv}}</h3>
-        <h3>FG: {{drink.fg}}</h3>
-        <h3>IBU: {{drink.ibu}}</h3>
+        <h4>ABV: {{drink.abv}}</h4>
+        <h4>FG: {{drink.fg}}</h4>
+        <h4>IBU: {{drink.ibu}}</h4>
         <p class="wrap-med">{{drink.description}}</p>
 
       </div>
