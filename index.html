@@ -36,12 +36,15 @@
     <br>
 
     <div ng-controller="PresentTenseSeasonal as ptfas">
-      <div class="adjust-text" ng-repeat="drink in ptfas.drinks | orderBy: 'name'">
-        <h1>{{drink.name}}</h1>
+      <h1>SEASONAL BEERS</h1>
+      <div ng-repeat="drink in ptfas.drinks | orderBy: 'name'">
+
+        <h2>{{drink.name}}</h2>
+        <img class='shrink' ng-src="{{drink.image}}" />
         <h3>ABV: {{drink.abv}}</h3>
         <h3>FG: {{drink.fg}}</h3>
         <h3>IBU: {{drink.ibu}}</h3>
-        <p class="shrink">{{drink.description}}</p>
+        <p class="wrap-med">{{drink.description}}</p>
 
       </div>
     </div>
@@ -51,7 +54,9 @@
 <br>
 
   <div ng-controller="PresentTenseComingSoon as ptfacs">
+    <h1>COMING SOON</h1>
     <div ng-repeat="drink in ptfacs.drinks">
+
       <h1>{{drink.name}}</h1>
     </div>
   </div>
