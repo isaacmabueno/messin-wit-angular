@@ -5,7 +5,9 @@ body {
   background: #edeff0;
   font-size: 16px;
   }
-
+h1 {
+  font-size: 50px !important;
+}
 .adjust-text {
   text-align: left;
 }
@@ -14,27 +16,37 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.shrink{
+.shrink {
   width: 25%;
 }
-.box {
-  border: 1px solid black;
-  margin-bottom: 2%;
+.headline {
+
 }
 .desc {
   list-style: none;
   display: inline;
+  margin-left: 1%;
+  padding-top: 10%;
+}
+.btn-default {
+  margin-top: 1%;
 }
 a {
   text-decoration: none;
 }
+hr {
+  width: 25%;
+}
 .center-buttons {
-  margin-left: -2%;
+  margin-left: -3%;
 }
 .desc :hover {
   color: black;
   font-weight: bold;
 }
-a, a:visited, a:hover, a:active {
-  color: inherit;
+a, a:hover, a:active {
+  color: black;
+}
+a:visited {
+  color: black !important;
 }

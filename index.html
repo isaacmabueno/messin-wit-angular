@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Angular App</title>
   </head>
@@ -15,62 +16,72 @@
 
   <div ng-controller="PresentTenseController as ptfa">
     <div ng-repeat="drink in ptfa.drinks | orderBy: 'name'">
-      <div class="box">
+      <div class="headline">
         <h2>{{drink.name}}</h2>
       </div>
       <img class='shrink' ng-src="{{drink.image}}" />
       <section ng-controller="SectionController as section">
-      <ul class='center-buttons'>
+        <ul class='center-buttons'>
+          <li class="desc" ng-class="{ active: panel.isSelected(1) }">
+            <button class="btn btn-default"><a href ng-click = "section.selectTab(1)"> Profile </a></button>
+          </li>
+          <li class="desc" ng-class="{ active: panel.isSelected(2) }">
+            <button class="btn btn-default"><a href ng-click = "section.selectTab(2)"> Description </a></button>
+          </li>
+        </ul>
+        <div class="wrap-med" ng-show="section.isSelected(1)">
+          <h5>ABV: {{drink.abv}}%</h5>
+          <h5>FG: {{drink.fg}}</h5>
+          <h5>IBU: {{drink.ibu}}</h5>
+        </div>
+
+        <div class="wrap-med" ng-show= "section.isSelected(2)">
+          <p> {{drink.description}}</p>
+        </div>
+      </section>
+    </div>
+        <!-- this button will only show if the value of the expression is true -->
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div ng-controller="PresentTenseSeasonal as ptfas">
+    <h1>SEASONAL BEERS</h1>
+    <div ng-repeat="drink in ptfas.drinks | orderBy: 'name'">
+      <div class="headline">
+        <h2>{{drink.name}}</h2>
+      </div>
+      <img class='shrink' ng-src="{{drink.image}}" />
+      <section ng-controller="SectionController as section">
+        <ul class="center-buttons">
         <li class="desc" ng-class="{ active: panel.isSelected(1) }">
-          <a href ng-click = "section.selectTab(1)">Profile | </a>
+          <button class="btn btn-default"><a href ng-click = "section.selectTab(1)"> Profile </a></button>
         </li>
         <li class="desc" ng-class="{ active: panel.isSelected(2) }">
-          <a href ng-click = "section.selectTab(2)">Description</a>
+          <button class="btn btn-default"><a href ng-click = "section.selectTab(2)"> Description </a></button>
         </li>
       </ul>
-      <div class="wrap-med" ng-show="section.isSelected(1)">
-        <h5>ABV: {{drink.abv}}</h5>
-        <h5>FG: {{drink.fg}}</h5>
-        <h5>IBU: {{drink.ibu}}</h5>
-      </div>
-
-      <div class="wrap-med" ng-show= "section.isSelected(2)">
-        <p> {{drink.description}}</p>
-      </div>
       </section>
-      <hr>
-      </div>
-        <!-- this button will only show if the value of the expression is true -->
-      <button ng-show="ptfa.drinks.canPurchase">Add to Cart</button>
-    </div>
-    </div>
-
-    <br>
-    <hr>
-    <br>
-
-    <div ng-controller="PresentTenseSeasonal as ptfas">
-      <h1>SEASONAL BEERS</h1>
-      <div ng-repeat="drink in ptfas.drinks | orderBy: 'name'">
-
-        <h2>{{drink.name}}</h2>
-        <img class='shrink' ng-src="{{drink.image}}" />
+      <div class="wrap-med" ng-show="section.isSelected(1)">
         <h4>ABV: {{drink.abv}}</h4>
         <h4>FG: {{drink.fg}}</h4>
         <h4>IBU: {{drink.ibu}}</h4>
+      </div>
+      <div class="wrap-med" ng-show="section.isSelected(2)">
         <p class="wrap-med">{{drink.description}}</p>
-
       </div>
     </div>
+  </div>
 
-<br>
-<hr>
-<br>
+  <br>
+  <hr>
+  <br>
 
   <div ng-controller="PresentTenseComingSoon as ptfacs">
     <h1>COMING SOON</h1>
     <div ng-repeat="drink in ptfacs.drinks">
-
       <h1>{{drink.name}}</h1>
     </div>
   </div>
